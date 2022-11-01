@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row text-center">
+        {% for recurso in recursos %}
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ recurso.tituloRecursos }}</h5>
+                  <p class="card-text">{{ recurso.descripcionRecursos }}</p>
+                  <div class="text-center">
+                    <a href="{{ recurso.linkRecursos }}" class="btn btn-outline-info btn-sm">Recurso de Aprendizaje</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

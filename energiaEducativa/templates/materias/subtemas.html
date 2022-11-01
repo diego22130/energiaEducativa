@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    {% for subTema in subTemas %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <a href="{% url 'recursos_sub_temas' subTema.pk %}" class="accordion-button text-decoration-none text-dark mb-1">
+          {{ subTema.nomSubTema }} <br>
+        </a> 
+      </h2>
+      <div id="flush-collapse{{ subTema.pk }}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            {% for recurso in recursos %}
+            <div class="d-grid gap-2">
+                <a class="btn btn-outline-info mb-3" href="·">{{ recurso.tituloRecursos }}</a>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
